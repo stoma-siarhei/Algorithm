@@ -9,6 +9,8 @@ using namespace std;
 
 tuple<int, size_t> search(vector<int>& nums, int target);
 
+tuple<int, size_t> search2(vector<int>& nums, int target);
+
 int main(int argc, char ** argv)
 {
 	vector<int> vec;
@@ -20,6 +22,12 @@ int main(int argc, char ** argv)
 		it = ++data;
 	}
 
+	for (auto i{ 0 }; i < 10; i++)
+	{
+		int target = (rand() % 9 * 100) + (rand() % 9 * 100) + (rand() % 9);
+		auto [index, count] = search(vec, target);
+		cout << "Target - " << target << " Index - " << index << " Count - " << count << endl;
+	}
 
 	return 0;
 }
@@ -74,3 +82,8 @@ tuple<int, size_t> search(vector<int>& nums, int target)
 *
 *	You must write an algorithm with O(log n) runtime complexity.
 */
+
+tuple<int, size_t> search2(vector<int>& nums, int target)
+{
+	return { -1, 0 };
+}
